@@ -1,9 +1,14 @@
 <div class="row">
   <div class="col-xs-12">
     <img style="max-width:400px;" *ngIf="book.photo" [src]="book.photo">
-    <h1>{{ book.title }}</h1>
-    <h3>{{ book.author }}</h3>
+    <h2>{{ book.title }}</h2>
+    <h4>{{ book.author }}</h4>
     <p>{{ book.synopsis }}</p>
+    <form [formGroup]="form">
+      <ngx-star-rating formControlName="rating" [id]="'rating'"></ngx-star-rating>
+      <div>Rating: {{form.value.rating}}</div>
+      <p>form is valid: {{ form.valid ? 'true' : 'false' }}</p>
+  </form>
     <button class="btn btn-default" (click)="onBack()">Retour</button>
   </div>
 </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Book } from '../../models/book.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BooksService } from '../../services/books.service';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-single-book',
@@ -11,9 +12,17 @@ import { BooksService } from '../../services/books.service';
 export class SingleBookComponent implements OnInit {
 
   book!: Book;
+  rating: number;
+  form: any;
 
   constructor(private route: ActivatedRoute, private booksService: BooksService,
-              private router: Router) {}
+              private router: Router, private fb: FormBuilder)
+              {
+                this.rating = 0;
+                this.form = this.fb.group({
+                  rating: ['', Validators.required],
+                })
+              }
 
   ngOnInit() {
     this.book = new Book('', '');
@@ -28,5 +37,5 @@ export class SingleBookComponent implements OnInit {
   onBack() {
     this.router.navigate(['/books']);
   }
-  
+
 }

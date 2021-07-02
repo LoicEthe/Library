@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BooksService } from '../../services/books.service';
 import { Router } from '@angular/router';
 import { Book } from 'src/app/models/book.model';
@@ -45,6 +45,8 @@ export class BookFormComponent implements OnInit {
     this.router.navigate(['books']);
   }
 
+
+
   onUploadFile(file: File) {
     this.fileIsUploading = true;
     this.booksService.uploadFile(file).then(
@@ -59,6 +61,8 @@ export class BookFormComponent implements OnInit {
   detectFiles(event: any) {
     this.onUploadFile(event.target.files[0]);
   }
+
+
 
 }
 

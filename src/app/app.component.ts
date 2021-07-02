@@ -5,6 +5,7 @@ import '@firebase/auth';
 import '@firebase/database';
 import '@firebase/firestore';
 import '@firebase/storage'
+import { FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -14,6 +15,7 @@ import '@firebase/storage'
 })
 export class AppComponent {
   title = 'Books';
+
 
   constructor(){
     const firebaseConfig = {
@@ -30,5 +32,8 @@ export class AppComponent {
     firebase.initializeApp(firebaseConfig);
 
   }
+
+
+
 
 }

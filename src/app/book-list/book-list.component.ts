@@ -3,8 +3,7 @@ import { BooksService } from '../services/books.service';
 import { Book } from '../models/book.model';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
-import * as firebase from 'firebase';
-import '@firebase/storage'
+ import '@firebase/storage'
 
 @Component({
   selector: 'app-book-list',
