@@ -42,7 +42,7 @@ export class BookListComponent implements OnInit, OnDestroy {
     this.router.navigate(['/books', 'view', id]);
   }
 
-  
+
 
 
 }
